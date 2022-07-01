@@ -1,0 +1,98 @@
+#resume-template{
+    display: none;
+}
+#resume-form{
+    background-image: linear-gradient(344deg, #3385e9, transparent);
+    background-size: 100%;
+}
+#tophead{
+    text-shadow:2px 2px 4px black;
+}
+.btn-group-sm>.btn, .btn-sm {
+    background-color: darkorange;
+    color: black;
+    box-shadow: 2px 3px slategrey;
+}
+.text-center{
+    color:tomato;
+}
+#auth{
+    font-style: italic;
+    font-family: 'Yellowtail', cursive;
+    font-size: 20px;
+}
+.container{
+    margin:20px;
+    display: flex;
+}
+.header{
+    margin-top:40px;
+    margin-left:40px;
+    margin-right:40px;
+    background-color: whitesmoke;
+}
+.main{
+    margin-bottom:40px;
+    margin-left:40px;
+    margin-right:40px;
+    background-color: revert;
+}
+.logo{
+    width:20px;
+    height:20px;
+    float:left;
+    margin-right:3px;
+    margin-left:10px;
+    border-radius: 50%;
+}
+.link{
+    color:black;
+    font-family: "Trirong", serif;
+    font-style: italic;
+}
+#contacT,#adressT{
+    color:black;
+    font-family: "Trirong", serif;
+}
+#nameT{
+    text-align:left;
+    margin-top: 15px;
+    margin-left: 20px;
+    font-family: "Trirong", serif;
+}
+#printresume{
+    font-weight: bold;
+    color:white;
+    background-color: teal;
+    left:50%;
+    border: 1px solid black;
+    font-family: "Trirong", serif; 
+}
+#resumebutton{
+    position: relative;
+    left: 50%;
+    background: teal;
+}
+.line{
+    border: 1px solid black;
+}
+.objective,.skill,.work,.education,.interests{
+    font-family: "Trirong", serif;
+}
+.subhead{
+    color:teal;
+}
+.form-group{
+    font-weight: bold;
+    color:seagreen;
+}
+textarea.form-control {
+    min-height: calc(1.5em + 0.75rem + 2px);
+    border: 1px solid;
+}
+.form-control{
+    border:1px solid;
+}
+.title{
+    color: slategrey;
+}

@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RESUME GENERATOR</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Yellowtail&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Trirong">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- html code -->
+    <!--resume form-->
+    <div class="container-fluid" id="resume-form">
+        <h1 class="text-center my-2" id="tophead">Resume Generator</h1>
+        <p class="text-center" id="auth">By Shubham</p>
+        <div class="row">
+            <div class="col-md-6">
+                <!--first column-->
+                <h3 class="subhead">Personal Information</h3>
+                <div class="form-group">
+                    <label for="namefield">Your Name</label>
+                    <input type="text" id="namefield" placeholder="Enter your full name here" class="form-control" required="required">
+                </div>
+                <div class="form-group mt-2">
+                    <label for="contactfield">Your Contact Number </label>
+                    <input type="number" id="contactfield" placeholder="+91-XXXXX-XXXXX" required="required" class="form-control">
+                </div>
+                <div class="form-group mt-2">
+                    <label for="adressfield">Your Adress</label>
+                    <textarea id="adressfield" placeholder="Enter your adress here" required="required" class="form-control"></textarea>
+                </div>
+                <p class="text-secondary my-2" id="note">Important Links</p>
+                <div class="form-group mt-2">
+                    <label for="mailfield">Your E-mail adress</label>
+                    <input type="email" id="mailfield" placeholder="example123@gmail.com"  required="required" class="form-control">
+                </div>
+                <div class="form-group mt-2">
+                    <label for="linkedfield">Your LinkdeIn Profile Link</label>
+                    <input type="url" id="linkedfield" placeholder="example.com/url/abc" required="required" class="form-control">
+                </div>
+                <div class="form-group mt-2" id="in">
+                    <label for="">Interests</label>
+                    <textarea placeholder="What are your interests??"  required="required" class="form-control infield"></textarea>
+                
+                <div class="text-center mt-3" id="inaddbutton">
+                    <button onclick="addnewinbutton()" class="btn btn-primary btn-sm">Add</button>
+                </div>
+                </div>
+
+            </div>
+            <div class="col-md-6">
+                <!--second column-->
+                <h3 class="subhead">Professional Information</h3>
+                <div class="form-group mt-2">
+                    <label for="obfield">Objective</label>
+                    <textarea id="obfield" placeholder="What is your objective??" required="required" class="form-control"></textarea>
+                </div>
+
+                <div class="form-group mt-2" id="sk">
+                    <label for="">Skills</label>
+                    <textarea  placeholder="What are you good at??" required="required" class="form-control skillfield"></textarea>
+                
+                <div class="text-center mt-3" id="skilladdbutton">
+                    <button onclick="addnewskillbutton()" class="btn btn-primary btn-sm">Add</button>
+                </div>
+                </div>
+
+                <div class="form-group mt-2" id="we">
+                    <label for="">Projects or Interships</label>
+                    <textarea placeholder="What are your work experiences like projects,internships etc??" required="required" class="form-control wefield"></textarea>
+                
+                <div class="text-center mt-3" id="weaddbutton">
+                    <button onclick="addnewwebutton()" class="btn btn-primary btn-sm">Add</button>
+                </div>
+                </div>
+                <div class="form-group mt-2" id="ed">
+                    <label for="">Education</label>
+                    <textarea  placeholder="Enter Your Education details" required="required" class="form-control edfield"></textarea>
+                
+                <div class="text-center mt-3" id="edaddbutton">
+                    <button onclick="addnewedbutton()" class="btn btn-primary btn-sm">Add</button>
+                </div>
+                </div>
+        
+            </div>
+        </div>
+        <div class="container text-center mt-5">
+            <button onclick="generateresume()" class="btn btn-primary btn-lg" id="resumebutton">Generate Resume</button>
+        </div>
+    </div>
+    <!--resume template-->
+    <div class="conatiner" id="resume-template">
+        <div class="header">
+         <h2 id="nameT">Shubham</h2>
+         <div class="PinfoT">
+                 <p><img src="data:image/png;base64,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" alt="" class="logo"><span id="contactT">8874526929</p></p>
+                 <p><img src="data:image/png;base64,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" alt="" class="logo"><a href="#1" class="link" id="mail">shubhamsrivastva300@gmail.com</a></p>
+                 <p><img src="https://static.vecteezy.com/system/resources/thumbnails/003/692/704/small/linkedin-american-business-logo-social-media-icon-black-pictogram-illustration-isolated-on-white-backgroud-free-vector.jpg" alt="" class="logo"><a href="#2"  id="linked" class="link">linkedIn</a></p>
+                 <p><img src="data:image/png;base64,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" alt="" class="logo"><span id="adressT">Kushinagar,Uttar pradesh</p></p>
+         </div><hr class="line" />
+         <hr class="line" />
+        </div>
+        <div class="main">
+        <div class="objective"><h3 class="title">Objective</h3>
+         <p id="obT">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ipsa sed itaque iusto libero facere architecto non asperiores enim exercitationem officiis quasi, illo doloribus unde, illum sint rerum placeat eos iste.</p>
+        </div><hr  class="line"/> 
+        <div class="skill">
+         <h3 id="skillh" class="title">Skills</h3>
+         <ul id="skillt">
+             <li>number1</li>
+             <li>number2</li>
+             <li>number3</li>
+         </ul>
+        </div><hr class="line" />
+        <div class="education">
+         <h3 id="eduh" class="title">Education</h3>
+         <ul id="edt">
+             <li>number1</li>
+             <li>number2</li>
+             <li>number3</li>
+         </ul>
+        </div><hr class="line" />
+        <div class="work">
+         <h3 id="weh" class="title">Projects/Internships</h3>
+         <ul id="wet">
+             <li>number1</li>
+             <li>number2</li>
+             <li>number3</li>
+         </ul>
+        </div><hr class="line" />
+        <div class="interests">
+         <h3 id="inh" class="title">Interests</h3>
+         <ul id="int">
+             <li>number1</li>
+             <li>number2</li>
+             <li>number3</li>
+         </ul>
+        </div>
+        </div>
+        <div class="text-center mt-5">
+            <button onclick="printresume()" class="btn btn-primary btn-lg" id="printresume">Print Resume</button>
+        </div>
+    </div>  
+ <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"></script> 
+<script  src="script.js"></script>  
+</body>
+</html>
